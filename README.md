@@ -11,7 +11,7 @@ The architecture is composed by four services:
 - `article-service`: Simple REST service created with **Spring Boot** to use as an example
 - `author-service`: Simple REST service created with **Spring Boot** to use as an example
 
-The services: `api-gateway`, `article-service` and `author-service` are already configured with **Hystrix (latency and fault tolerance library)** and are providing a **stream** that you can use to monitor with a **Hystrix/Turbine** dashboard. You can check the **Hystrix Stream** accessing the service URL with `/hystrix.stream` (example: `http://localhost:8765/hystrix.stream`)
+The services: `api-gateway`, `article-service` and `author-service` are already configured with **Hystrix (latency and fault tolerance library)** and are providing a **stream** that you can use to monitor with a **Hystrix/Turbine** dashboard. You can check the **Hystrix Stream** accessing the service URL with `/hystrix.stream` (example: `http://54.144.19.170:8765/hystrix.stream`)
 
 ## How to use
 
@@ -23,18 +23,18 @@ To test this architecture you will need to have: **JDK 8+**, **Docker** and **Ma
 
 In the default configuration you will have:
 
-- **Discovery Service** running on port `8761`, access `http://localhost:8761` to see the dashboard
+- **Discovery Service** running on port `8761`, access `http://54.144.19.170:8761` to see the dashboard
 - **API Gateway** running on port `8765`, you will send the requests to this service
 - **Two Article Services** running on ports: `8080` and `9080`
 - **Two Author Services** running on ports: `8081` and `9081`
 
-After running the containers, head to `http://localhost:8761` to make sure that the four services (two **article** and two **author**) are registered in the **Discovery Service**, when they're all registered you can test the application with `curl` making requests to the endpoints below:
+After running the containers, head to `http://54.144.19.170:8761` to make sure that the four services (two **article** and two **author**) are registered in the **Discovery Service**, when they're all registered you can test the application with `curl` making requests to the endpoints below:
 
-- `curl http://localhost:8765/api/articles`
-- `curl http://localhost:8765/api/articles/id`
-- `curl http://localhost:8765/api/articles/author/id`
-- `curl http://localhost:8765/api/authors`
-- `curl http://localhost:8765/api/authors/id`
+- `curl http://54.144.19.170:8765/api/articles`
+- `curl http://54.144.19.170:8765/api/articles/id`
+- `curl http://54.144.19.170:8765/api/articles/author/id`
+- `curl http://54.144.19.170:8765/api/authors`
+- `curl http://54.144.19.170:8765/api/authors/id`
 
 ## Contributing
 
